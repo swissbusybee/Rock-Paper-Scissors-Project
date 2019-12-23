@@ -1,81 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
   <title>Rock, Paper, Scissors</title>
   <link href="assets/style.css" rel="stylesheet" type="text/css">
-  <!--script src="assets/script.js" rel="script" type="text/javascript"></script>-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <script src="assets/script.js" type="text/javascript"></script>
+
 </head>
 
 <body>
-  <h1>Let's Play Rock, Paper, Scissors!<h1>
-  <h3>Play the best out of 5 rounds.  Let the odds be in your favor.</h3>
+  <h1>Let's Play Rock, Paper, Scissors<h1>
+  <h2>Choose Your Weapon!</h2>
+
+  <div id="btn-container">
+  <button id='rbtn'><i class='far fa-hand-rock icon-4x '></i> Rock</button>
+  <button id='pbtn'><i class='far fa-hand-paper icon-4x'></i> Paper</button>
+  <button id='sbtn'><i class='far fa-hand-scissors icon-4x'></i> Scissors</button>
+  </div>
+
+  <div id="results">Play 5 rounds and Good Luck!</div>
+
+  <div id="score">
+      <strong>SCORE</strong>
+      <br>
+      <span>Player Score:</span>
+      <span id="player-score">0</span>
+      <span>-</span>
+      <span>Computer Score:</span>
+      <span id="comp-score">0</span>
+  </div>
+  <div class="hidden">
+      <div id="final-result"></div>
+      <button id="reset">Play Again?</button>
+  </div>
 
 
-  <script>
-
-
-    <!--Game Resets//-->
-
-
-
-
-    <!--Computer plays random options-->
-
-    function computerPlay() {
-        let options = ['rock','paper','scissors'];
-        let computerInput = options[Math.floor(Math.random()*options.length)];
-        return computerInput;
-    };
-
-    <!--Capitalization of first and consistent lowercase-->
-
-    function capitalize(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-      }
-
-    <!--Plays single round of game-->
-
-    function playRound(playerSelection, computerSelection) {
-	       if (playerSelection === computerSelection) {
-         return `Draw! You both selected ${playerSelection}!`;
-          } else if (playerSelection === 'rock' && computerSelection === 'paper' ||
-                     playerSelection === 'scissors' && computerSelection === 'rock' ||
-                     playerSelection === 'paper' && computerSelection === 'scissors') {
-        computerScore++;
-        return `You Lose! ` + capitalize(computerSelection) + ` beats ${capitalize(playerSelection)}!`;
-         } else {
-        playerScore++;
-        return `You Win! ` + capitalize(playerSelection) + ` beats ${capitalize(computerSelection)}!`;
-      }
-     }
-
-    <!--Plays game and keeps score-->
-
-    function game() {
-      let playerSelection = prompt('Enter Rock, Paper, Scissors');
-      let computerSelection = computerPlay();
-      console.log(playRound(playerSelection, computerSelection));
-    }
-
-    function results () {
-      console.log(`Computer Score: ` + computerScore + ` Player Score: ${playerScore}`);
-      if (computerScore > playerScore) {
-      console.log('You lose! Computer wins the game!');
-      } else {
-      console.log('You win the game! Computer loses!');
-      }
-     }
-
-    let computerScore = 0;
-    let playerScore = 0;
-
-    for (let round = 0; round < 5; round++) {
-    game();
-    }
-    results();
-
-
-   </script>
   </body>
 </html>

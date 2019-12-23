@@ -1,0 +1,35 @@
+body {
+  font-family: 'Shadows Into Light', cursive, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #000001;
+  box-sizing: border-box;
+  margin-top: 30px;
+  background-color: #F1F7ED
+}
+
+button {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: 200;
+}
+
+button:hover {
+  background: #B6CCA1;
+}
+
+div {
+  margin: 25px auto;
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+
+#results {
+font-family: 'Shadows Into Light', cursive, sans-serif;
+}
+
+.hidden {
+    visibility: hidden;
+}
